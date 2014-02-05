@@ -1,3 +1,5 @@
+require_relative 'board_loader/input_sanitizer'
+
 module Sudoku
   BUILDERS = {
     row: RowBuilder,
@@ -23,7 +25,7 @@ module Sudoku
     end
 
     def sanitized
-      board_string.gsub(/[^\n1-9\.]/,'').gsub("\n\n","\n")
+      InputSanitizer.new(board_string).cleaned
     end
 
     class InvalidBoardFile < ArgumentError; end
