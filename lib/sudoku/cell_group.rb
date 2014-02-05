@@ -38,5 +38,3 @@ module Sudoku
   class Row < CellGroup; end
   class Region < CellGroup; end
 end
-
-
