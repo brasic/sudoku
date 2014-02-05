@@ -27,10 +27,10 @@ module Sudoku
     end
 
     def row_segment_for(region_number)
-      case region_number
-      when 0,3,6 then :front
-      when 1,4,7 then :middle
-      when 2,5,8 then :back
+      case region_number % 3
+      when 0 then :front
+      when 1 then :middle
+      when 2 then :back
       end
     end
 
