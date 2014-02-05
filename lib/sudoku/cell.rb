@@ -1,10 +1,13 @@
 module Sudoku
   class Cell
-    attr_accessor :val
+    attr_reader :val
     Empty = Class.new
 
-    def initialize(val)
-      @val = (val == '.') ? Empty : val.to_i
+    def initialize(item)
+      @val = case item
+             when '.' then Empty
+             else item.to_i
+             end
     end
 
     def erase
@@ -20,4 +23,3 @@ module Sudoku
     end
   end
 end
-
